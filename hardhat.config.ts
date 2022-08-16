@@ -56,7 +56,7 @@ const config: HardhatUserConfig = {
     hardhat: {
       forking: {
         enabled: process.env.FORKING === "true",
-        url: `https://smartbch.fountainhead.cash/mainnet`,
+        url: `https://rpc01-sg.dogechain.dog`,
         blockNumber: 639620,
       },
       live: false,
@@ -64,20 +64,11 @@ const config: HardhatUserConfig = {
       tags: ["test", "local"],
     },
     smartbch: {
-      url: "https://smartbch.fountainhead.cash/mainnet",
+      url: "https://rpc01-sg.dogechain.dog",
       accounts,
-      chainId: 10000,
+      chainId: 2000,
       live: true,
       saveDeployments: true,
-      gasMultiplier: 2,
-    },
-    "smartbch-amber": {
-      url: "https://moeing.tech:9545",
-      accounts,
-      chainId: 10001,
-      live: true,
-      saveDeployments: true,
-      tags: ["staging"],
       gasMultiplier: 2,
     },
   },
