@@ -1,10 +1,10 @@
-# MISTswap
+# DOGMONEY
 
-https://mistswap.fi
+https://app.dogmoney.money
 
 ## Deployed Contracts
 
-https://github.com/mistswapdex/mistswap-sdk/blob/master/src/constants/addresses.ts
+https://github.com/dogmoneyswap/dogmoneyswap-sdk/blob/master/src/constants/addresses.ts
 
 ## Docs
 
