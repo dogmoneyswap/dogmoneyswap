@@ -56,15 +56,15 @@ const config: HardhatUserConfig = {
     hardhat: {
       forking: {
         enabled: process.env.FORKING === "true",
-        url: `https://rpc01-sg.dogechain.dog`,
+        url: `https://rpc03-sg.dogechain.dog`,
         blockNumber: 639620,
       },
       live: false,
       saveDeployments: true,
       tags: ["test", "local"],
     },
-    smartbch: {
-      url: "https://rpc01-sg.dogechain.dog",
+    dogechain: {
+      url: "https://rpc03-sg.dogechain.dog",
       accounts,
       chainId: 2000,
       live: true,
