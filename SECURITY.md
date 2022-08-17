@@ -1,6 +1,6 @@
 # Security Policy
 
-At MISTswap, we consider the security of our systems a top priority. But even with such priority and maximum effort, there is still the possibility that vulnerabilities can exist. 
+At DogMoney, we consider the security of our systems a top priority. But even with such priority and maximum effort, there is still the possibility that vulnerabilities can exist. 
 
 In case you discover a vulnerability, we would like to know about it immediately so we can take steps to address it as quickly as possible.  
 
@@ -8,7 +8,7 @@ If you discover a vulnerability, please do the following:
 
     E-mail your findings to kasumi.null@yandex.com. 
 
-    Do not take advantage of the vulnerability or similar problems you have discovered, including, but not limited to, testing the vulnerability on the smartBCH mainnet or testnet. 
+    Do not take advantage of the vulnerability or similar problems you have discovered, including, but not limited to, testing the vulnerability on the DogeChain mainnet or testnet. 
 
     Do not reveal the vulnerability to others until it has been resolved, including, but not limited to, filing a public ticket mentioning the vulnerability. 
     
