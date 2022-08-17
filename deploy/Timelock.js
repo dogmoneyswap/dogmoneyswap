@@ -13,7 +13,7 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   })
 
   const txOptions = {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5000000,
     from: dev,
   }

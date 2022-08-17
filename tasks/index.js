@@ -55,7 +55,7 @@ task("factory:set-fee-to", "Factory set fee to")
   const factory = await ethers.getContract("UniswapV2Factory")
   console.log(`Setting factory feeTo to ${address} address`)
   await (await factory.connect(await getNamedSigner('dev')).setFeeTo(address, {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
   })).wait()
 });
 
@@ -74,6 +74,13 @@ task("factory:get-pair", "Factory get pair")
     [tokenA, tokenB] = [tokenB, tokenA]
   }
   console.log(`${await (await factory.connect(await getNamedSigner('dev')).getPair(tokenA, tokenB))}`)
+});
+
+task("factory:paircodehash", "Get pair id")
+.setAction(async function ({ }, { ethers: { getNamedSigner } }, runSuper) {
+  const factory = await ethers.getContract("UniswapV2Factory");
+  console.log(`${await (await factory.connect(await getNamedSigner('dev')).pairCodeHash())}`)
+
 });
 
 task("factory:query", "Get pair code hash")
@@ -170,7 +177,7 @@ task("masterchef:massupdate", "update reward variables for all pools")
   const masterChef = await ethers.getContract("MasterChef")
 
   await (await masterChef.connect(await getNamedSigner("dev")).massUpdatePools({
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5198000,
   })).wait()
 
@@ -184,7 +191,7 @@ task("masterchef:add", "Add farm to masterchef")
   const masterChef = await ethers.getContract("MasterChef")
 
   await (await masterChef.connect(await getNamedSigner("dev")).add(alloc, address, true, {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5198000,
   })).wait()
 });
@@ -209,7 +216,7 @@ task("masterchef:add:queue", "Add farm to masterchef (timelock queue)")
     encodeParameters(["uint256", "address", "bool"], [alloc, address, false]),
     eta,
   {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5198000,
   })).wait()
 });
@@ -229,7 +236,7 @@ task("masterchef:add:execute", "Add farm to masterchef (timelock execute)")
     encodeParameters(["uint256", "address", "bool"], [alloc, address, false]),
     eta,
   {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5198000,
   })).wait()
 });
@@ -249,7 +256,7 @@ task("masterchef:add:cancel", "Add farm to masterchef (timelock cancel)")
     encodeParameters(["uint256", "address", "bool"], [alloc, address, false]),
     eta,
   {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5198000,
   })).wait()
 });
@@ -263,7 +270,7 @@ task("masterchef:set", "Set farm allocation points")
   const masterChef = await ethers.getContract("MasterChef")
 
   await (await masterChef.connect(await getNamedSigner("dev")).set(pid, alloc, massUpdate, {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5198000,
   })).wait()
 });
@@ -284,7 +291,7 @@ task("masterchef:set:queue", "Set farm allocation points (timelock queue)")
     encodeParameters(["uint256", "uint256", "bool"], [pid, alloc, massUpdate]),
     eta,
   {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5198000,
   })).wait()
 });
@@ -305,7 +312,7 @@ task("masterchef:set:execute", "Set farm allocation points (timelock execute)")
     encodeParameters(["uint256", "uint256", "bool"], [pid, alloc, massUpdate]),
     eta,
   {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5198000,
   })).wait()
 });
@@ -326,7 +333,7 @@ task("masterchef:set:cancel", "Set farm allocation points (timelock cancel)")
     encodeParameters(["uint256", "uint256", "bool"], [pid, alloc, massUpdate]),
     eta,
   {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5198000,
   })).wait()
 });
@@ -447,7 +454,7 @@ task("maker:serve", "SushiBar serve")
       const b = await pair.token1()
       console.log('tokens: ', a, b)
 
-      const served = await (await maker.connect(await getNamedSigner("dev")).convert(a, b, { gasPrice: 1050000000, gasLimit: 5198000 })).wait()
+      const served = await (await maker.connect(await getNamedSigner("dev")).convert(a, b, { gasPrice: 100000000000, gasLimit: 5198000 })).wait()
       console.log('served', served.transactionHash)
       ++servedCount
     } catch (e) {

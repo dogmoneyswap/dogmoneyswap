@@ -1,4 +1,4 @@
-const { WETH9 } = require("@mistswapdex/sdk")
+const { WNATIVE } = require("@dogmoneyswap/sdk")
 
 module.exports = async function ({ ethers: { getNamedSigner }, getNamedAccounts, deployments }) {
   const { deploy } = deployments
@@ -15,8 +15,8 @@ module.exports = async function ({ ethers: { getNamedSigner }, getNamedAccounts,
   
   if (chainId === '31337') {
     wethAddress = (await deployments.get("WETH9Mock")).address
-  } else if (chainId in WETH9) {
-    wethAddress = WETH9[chainId].address
+  } else if (chainId in WNATIVE) {
+    wethAddress = WNATIVE[chainId].address
   } else {
     throw Error("No WETH!")
   }
@@ -29,7 +29,7 @@ module.exports = async function ({ ethers: { getNamedSigner }, getNamedAccounts,
   })
 
   const txOptions = {
-    gasPrice: 1050000000,
+    gasPrice: 100000000000,
     gasLimit: 5000000,
   }
 
