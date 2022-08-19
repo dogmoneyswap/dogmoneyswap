@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "license": "MIT",
   "types": "./types/index.ts",
-  "description": "Core contracts for the MISTswap protocol",
+  "description": "Core contracts for the DogMoney protocol",
   "files": [
     "abi",
     "artifacts",
